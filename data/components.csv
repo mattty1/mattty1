@@ -1,0 +1,50 @@
+category,name,brand,price,perf_gaming,perf_office,perf_content,socket,mem_type,capacity_gb,wattage,power_draw,notes
+CPU,Intel Core i3-12100F,Intel,449,55,60,45,LGA1700,,,,60,Budżetowy procesor do biura i lekkiego grania
+CPU,Intel Core i5-12400F,Intel,649,70,72,65,LGA1700,,,,65,Bardzo dobry stosunek ceny do wydajności
+CPU,Intel Core i5-13600KF,Intel,1199,85,85,82,LGA1700,,,,125,Mocny procesor do grania i pracy
+CPU,Intel Core i7-13700KF,Intel,1699,90,92,90,LGA1700,,,,125,Wydajny procesor do zaawansowanych zadań
+CPU,Intel Core i9-14900K,Intel,2599,97,98,97,LGA1700,,,,125,Topowy procesor Intela
+CPU,AMD Ryzen 5 5500,AMD,419,52,58,50,AM4,,,,65,Tani procesor na platformę AM4
+CPU,AMD Ryzen 5 5600,AMD,549,68,70,64,AM4,,,,65,Świetny budżetowy procesor do grania
+CPU,AMD Ryzen 7 5700X,AMD,899,78,82,84,AM4,,,,65,8 rdzeni do pracy i grania na AM4
+CPU,AMD Ryzen 5 7600,AMD,999,80,82,78,AM5,,,,65,Nowa platforma AM5 w rozsądnej cenie
+CPU,AMD Ryzen 7 7800X3D,AMD,1799,95,90,88,AM5,,,,120,Najlepszy procesor do gier
+CPU,AMD Ryzen 9 7950X,AMD,2799,93,99,99,AM5,,,,170,Bestia do renderingu i obliczeń
+Motherboard,ASRock B660M-HDV,ASRock,399,60,60,60,LGA1700,DDR4,,,30,Tania płyta DDR4 dla Intel 12/13 gen
+Motherboard,MSI PRO B760M-A,MSI,649,75,75,75,LGA1700,DDR4,,,35,Solidna płyta mATX DDR4 pod Intel
+Motherboard,Gigabyte Z790 UD,Gigabyte,899,90,90,90,LGA1700,DDR5,,,40,Płyta DDR5 pod mocne CPU Intel
+Motherboard,ASUS PRIME B550M-K,ASUS,389,60,60,60,AM4,DDR4,,,30,Tania płyta DDR4 pod Ryzen 5000
+Motherboard,MSI B550 TOMAHAWK,MSI,699,80,80,80,AM4,DDR4,,,35,Popularna płyta ATX DDR4 pod AM4
+Motherboard,ASRock B650M PG,ASRock,749,82,82,82,AM5,DDR5,,,38,Płyta DDR5 pod Ryzeny 7000
+Motherboard,ASUS ROG STRIX X670E,ASUS,1499,95,95,95,AM5,DDR5,,,45,Topowa płyta DDR5 pod AM5
+RAM,Goodram 8GB DDR4 3200,Goodram,99,40,45,40,,DDR4,8,,5,Podstawowy moduł do biura
+RAM,Crucial 16GB DDR4 3200,Crucial,179,65,70,65,,DDR4,16,,6,Standard do grania i pracy
+RAM,Kingston Fury 32GB DDR4 3600,Kingston,349,80,85,85,,DDR4,32,,8,Dużo pamięci na AM4/LGA1700
+RAM,Kingston Fury 64GB DDR4 3200,Kingston,649,82,88,90,,DDR4,64,,10,Maksimum pamięci na platformie DDR4
+RAM,Corsair 16GB DDR5 5600,Corsair,289,75,78,75,,DDR5,16,,7,Szybka pamięć DDR5
+RAM,G.Skill 32GB DDR5 6000,G.Skill,539,88,90,92,,DDR5,32,,9,Wydajna pamięć DDR5 do AM5/Intel
+RAM,Kingston Fury 64GB DDR5 6000,Kingston,1099,90,95,99,,DDR5,64,,12,Ogrom pamięci do pracy z dużymi projektami
+GPU,Intel Arc A580,Intel,949,68,55,70,,,,,185,Tania karta do 1080p
+GPU,NVIDIA GeForce RTX 3050,NVIDIA,899,60,50,58,,,,,130,Podstawowa karta do grania 1080p
+GPU,NVIDIA GeForce RTX 4060,NVIDIA,1399,78,60,72,,,,,115,Świetna karta do 1080p/1440p
+GPU,AMD Radeon RX 7700 XT,AMD,1899,85,62,80,,,,,245,Mocna karta do 1440p
+GPU,NVIDIA GeForce RTX 4070 Super,NVIDIA,2799,90,65,90,,,,,220,Wydajna karta do 1440p/4K
+GPU,NVIDIA GeForce RTX 4080 Super,NVIDIA,4699,97,70,97,,,,,320,Karta do 4K i ciężkiej pracy graficznej
+GPU,Karta zintegrowana (brak GPU),Brak,0,15,40,20,,,,,0,Korzysta z grafiki w procesorze - tylko biuro
+SSD,Crucial BX500 480GB SATA,Crucial,149,55,55,55,,,480,,4,Tani dysk SSD na system
+SSD,Kingston NV2 1TB NVMe,Kingston,259,70,70,70,,,1000,,5,Szybki dysk NVMe 1TB
+SSD,Samsung 980 2TB NVMe,Samsung,549,85,85,88,,,2000,,6,Pojemny i szybki dysk NVMe
+SSD,WD Black SN850X 4TB NVMe,WD,1199,92,90,95,,,4000,,7,Bardzo pojemny i szybki dysk
+HDD,Seagate Barracuda 2TB,Seagate,229,30,40,45,,,2000,,8,Tani dysk talerzowy na dane
+HDD,Toshiba 4TB,Toshiba,389,30,40,50,,,4000,,9,Dużo miejsca na pliki
+PSU,SilentiumPC Vero 500W,SilentiumPC,189,60,60,60,,,,500,0,Zasilacz do tańszych zestawów
+PSU,be quiet! System Power 650W,be quiet!,279,75,75,75,,,,650,0,Cichy zasilacz 650W
+PSU,Corsair RM750e 750W,Corsair,399,85,85,85,,,,750,0,Pewny zasilacz do mocnych zestawów
+PSU,Seasonic Focus GX 850W,Seasonic,549,92,92,92,,,,850,0,Wysokiej klasy zasilacz 850W
+Case,Modecom Oberon,Modecom,159,50,50,50,,,,,0,Tania obudowa mATX
+Case,SilentiumPC Armis AR7,SilentiumPC,259,70,70,70,,,,,0,Obudowa z dobrym przepływem powietrza
+Case,NZXT H5 Flow,NZXT,419,88,85,88,,,,,0,Estetyczna i dobrze chłodząca obudowa
+Cooler,Chłodzenie BOX (w zestawie),Brak,0,40,50,40,,,,,0,Standardowe chłodzenie z procesorem
+Cooler,SilentiumPC Fera 5,SilentiumPC,119,70,70,70,,,,,0,Tani i skuteczny cooler powietrzny
+Cooler,be quiet! Dark Rock 4,be quiet!,329,88,88,88,,,,,0,Wydajne i ciche chłodzenie powietrzne
+Cooler,Arctic Liquid Freezer II 280,Arctic,499,95,90,95,,,,,0,Chłodzenie wodne AIO do mocnych CPU
