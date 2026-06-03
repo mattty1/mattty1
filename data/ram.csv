@@ -1,0 +1,8 @@
+model,ram_type,capacity_gb,price,score
+Crucial 8GB DDR4 3200,DDR4,8,120,30
+Kingston Fury 16GB DDR4 3200,DDR4,16,200,50
+Kingston Fury 32GB DDR4 3600,DDR4,32,350,70
+Corsair 64GB DDR4 3600,DDR4,64,650,85
+Kingston Fury 16GB DDR5 5600,DDR5,16,300,60
+Kingston Fury 32GB DDR5 6000,DDR5,32,550,80
+G.Skill 64GB DDR5 6000,DDR5,64,1000,95
