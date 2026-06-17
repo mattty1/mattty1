@@ -21,20 +21,24 @@ from pptx.enum.chart import XL_CHART_TYPE, XL_LEGEND_POSITION, XL_LABEL_POSITION
 from pptx.oxml.ns import qn
 
 # ---------------------------------------------------------------------------
-# PALETA KOLORÓW (żywa, "Canva-like")
+# PALETA KOLORÓW (barwy marek Apple / Samsung)
+#   Apple  -> grafit / czerń / srebro + jasnoniebieski akcent
+#   Samsung-> głęboki granatowy niebieski + jasne niebieskie tony
+# Nazwy zmiennych pozostają jak wcześniej (mapowanie ról), aby nie zmieniać
+# całego układu — zmieniają się jedynie wartości kolorów.
 # ---------------------------------------------------------------------------
-INK       = RGBColor(0x1E, 0x1B, 0x2E)   # prawie czarny granat (tekst)
+INK       = RGBColor(0x1D, 0x1D, 0x1F)   # Apple "space black" (tekst)
 WHITE     = RGBColor(0xFF, 0xFF, 0xFF)
-CLOUD     = RGBColor(0xF6, 0xF4, 0xFD)   # bardzo jasny fiolet (tło)
-PURPLE    = RGBColor(0x6D, 0x28, 0xD9)   # główny fiolet
-PURPLE_DK = RGBColor(0x3B, 0x0A, 0x6B)
-PINK      = RGBColor(0xEC, 0x4B, 0x9C)   # różowy akcent
-CORAL     = RGBColor(0xFB, 0x70, 0x4C)   # koralowy
-AMBER     = RGBColor(0xF5, 0xA6, 0x23)   # bursztyn
-TEAL      = RGBColor(0x14, 0xB8, 0xA6)   # turkus
-SKY       = RGBColor(0x3B, 0x82, 0xF6)   # niebieski
-GREEN     = RGBColor(0x22, 0xC5, 0x5E)   # zielony (sukces)
-GREY      = RGBColor(0x6B, 0x66, 0x80)
+CLOUD     = RGBColor(0xF5, 0xF5, 0xF7)   # Apple srebrne tło
+PURPLE    = RGBColor(0x00, 0x71, 0xE3)   # Apple blue — główny akcent
+PURPLE_DK = RGBColor(0x0A, 0x12, 0x2A)   # ciemny granat (tła ciemnych slajdów)
+PINK      = RGBColor(0x14, 0x28, 0xA0)   # Samsung blue — akcent drugi
+CORAL     = RGBColor(0x48, 0x48, 0x4A)   # Apple grafit
+AMBER     = RGBColor(0x5A, 0xC8, 0xFA)   # Apple jasnoniebieski (wyróżnienie)
+TEAL      = RGBColor(0x00, 0x9D, 0xDC)   # cyjanowy niebieski
+SKY       = RGBColor(0x1B, 0x6E, 0xF3)   # jasny Samsung blue
+GREEN     = RGBColor(0x0A, 0x84, 0xFF)   # żywy niebieski (status: potwierdzona)
+GREY      = RGBColor(0x86, 0x86, 0x8B)   # Apple szary (tekst drugorzędny)
 
 IPHONE_C  = RGBColor(0x1D, 0x1D, 0x1F)   # grafit Apple
 SAMSUNG_C = RGBColor(0x14, 0x28, 0xA0)   # niebieski Samsung
