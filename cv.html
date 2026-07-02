@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>CV - Mateusz Pluta</title>
+<style>
+  :root {
+    --navy: #1f3a5f;
+    --navy-dark: #16293f;
+    --accent: #2c9b8f;
+    --accent-light: #e6f4f2;
+    --text: #2d3436;
+    --muted: #5f6b74;
+    --sidebar-text: #dfe8f0;
+    --line: #e2e8ee;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 68mm 1fr;
+    background: #ffffff;
+  }
+
+  /* ---------- SIDEBAR ---------- */
+  .sidebar {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: var(--sidebar-text);
+    padding: 30px 24px 40px;
+  }
+
+  .avatar {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    background: linear-gradient(135deg, var(--accent) 0%, #3fbfb0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    font-weight: 700;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    letter-spacing: 1px;
+  }
+
+  .sidebar-section { margin-bottom: 26px; }
+
+  .sidebar-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-bottom: 11px;
+    font-size: 12px;
+    word-break: break-word;
+  }
+  .contact-item .ic {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+    fill: var(--accent);
+  }
+
+  .sidebar-list { list-style: none; }
+  .sidebar-list li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 9px;
+    font-size: 12px;
+    color: var(--sidebar-text);
+  }
+  .sidebar-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .tag {
+    display: inline-block;
+    background: rgba(44,155,143,0.22);
+    border: 1px solid rgba(63,191,176,0.5);
+    color: #eafaf7;
+    padding: 3px 9px;
+    border-radius: 12px;
+    font-size: 11px;
+    margin: 0 5px 6px 0;
+  }
+
+  /* ---------- MAIN ---------- */
+  .main { padding: 30px 32px 36px; }
+
+  .header {
+    margin-bottom: 26px;
+    padding-bottom: 18px;
+    border-bottom: 3px solid var(--accent-light);
+  }
+  .name {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+  }
+  .role {
+    margin-top: 6px;
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .section { margin-bottom: 24px; }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .section-head .badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+  .section-head .badge svg { width: 17px; height: 17px; fill: var(--accent); }
+  .section-head h2 {
+    font-size: 16px;
+    color: var(--navy);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .timeline { position: relative; padding-left: 20px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: var(--line);
+  }
+  .entry { position: relative; margin-bottom: 15px; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2.5px solid var(--accent);
+  }
+  .entry-title { font-size: 13px; font-weight: 600; color: var(--text); }
+  .entry-date {
+    display: inline-block;
+    margin-top: 3px;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 600;
+    background: var(--accent-light);
+    padding: 1px 8px;
+    border-radius: 10px;
+  }
+
+  .skills-list { list-style: none; }
+  .skills-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 9px;
+    font-size: 13px;
+  }
+  .skills-list li svg {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 13px;
+    height: 13px;
+    fill: var(--accent);
+  }
+
+  .rodo {
+    margin-top: 6px;
+    font-size: 9.5px;
+    color: var(--muted);
+    line-height: 1.45;
+    background: #f7f9fb;
+    border-left: 3px solid var(--line);
+    padding: 10px 12px;
+    border-radius: 0 6px 6px 0;
+    text-align: justify;
+  }
+  .rodo-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="avatar">MP</div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Dane personalne</div>
+        <div class="contact-item">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M6.62 10.79a15.53 15.53 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.24 1.01l-2.21 2.21z"/></svg>
+          <span>783 156 382</span>
+        </div>
+        <div class="contact-item">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z"/></svg>
+          <span>mateuszpluta29@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+          <span>Data urodzenia: 28.06.2004r.</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Umiejętności</div>
+        <ul class="sidebar-list">
+          <li>Sprawna obsługa komputera w tym pakietu MS Office(Word, Excel, Access)</li>
+          <li>Angielski – komunikatywny</li>
+          <li>Diagnoza, naprawa i wymiana podstawowych części komputerowych</li>
+          <li>Podstawowa znajomość: PHP, CSS, HTML, JS i MSSQL</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Dodatkowe informacje</div>
+        <div>
+          <span class="tag">Prawo jazdy kat. B</span>
+          <span class="tag">Status studenta</span>
+          <span class="tag">Książeczka sanepidowska</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <div class="header">
+        <div class="name">Mateusz Pluta</div>
+        <div class="role">Technik informatyk</div>
+      </div>
+
+      <section class="section">
+        <div class="section-head">
+          <span class="badge">
+            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13.5L5 12.72V15l7 3.82L19 15v-2.28L12 16.5z"/></svg>
+          </span>
+          <h2>Wykształcenie</h2>
+        </div>
+        <div class="timeline">
+          <div class="entry">
+            <div class="entry-title">Technikum Ekonomiczno-Handlowe w Lublinie – Technik informatyk(INF 02 i INF 03)</div>
+            <span class="entry-date">09.2019 – 04.2024</span>
+          </div>
+          <div class="entry">
+            <div class="entry-title">Politechnika Lubelska, Sztuczna inteligencja w biznesie</div>
+            <span class="entry-date">2024 - obecnie</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <span class="badge">
+            <svg viewBox="0 0 24 24"><path d="M20 6h-4V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2H4a2 2 0 00-2 2v11a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2zm-6 0h-4V4h4v2z"/></svg>
+          </span>
+          <h2>Doświadczenie zawodowe</h2>
+        </div>
+        <div class="timeline">
+          <div class="entry">
+            <div class="entry-title">Staż w zawodzie technik informatyk – X-COM Jarosław Krawczyk</div>
+            <span class="entry-date">06.2022 – 07.2022</span>
+          </div>
+          <div class="entry">
+            <div class="entry-title">Pomocnik biurowy w gminie – staż</div>
+            <span class="entry-date">05.2023</span>
+          </div>
+          <div class="entry">
+            <div class="entry-title">Operator produkcji – praca sezonowa – Nestle Waters Nałęczowianka</div>
+            <span class="entry-date">07.2024 – 08.2024</span>
+          </div>
+          <div class="entry">
+            <div class="entry-title">Realizacja i pakowanie zamówień oraz przyjmowanie i wydawanie towarów – praca sezonowa – VMV Studio</div>
+            <span class="entry-date">08.2025 – 09.2025</span>
+          </div>
+          <div class="entry">
+            <div class="entry-title">Prace magazynowe – DHL Parcel Lublin</div>
+            <span class="entry-date">05.2025 – obecnie</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="rodo-title">Klauzula RODO</div>
+        <div class="rodo">
+          Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r.
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
