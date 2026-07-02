@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>CV - Mateusz Pluta</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #eef3f8;
+      color: #1d2939;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11.5px;
+      line-height: 1.42;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 47mm;
+      background: linear-gradient(135deg, #102a43 0%, #175873 54%, #20a4a8 100%);
+    }
+
+    .accent::after {
+      content: "";
+      position: absolute;
+      right: -18mm;
+      top: -18mm;
+      width: 70mm;
+      height: 70mm;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .content {
+      position: relative;
+      padding: 15mm 14mm 12mm;
+      z-index: 1;
+    }
+
+    header {
+      color: #ffffff;
+      padding-bottom: 10mm;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 31px;
+      letter-spacing: 0.8px;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      margin-top: 3mm;
+      width: 18mm;
+      height: 2px;
+      background: #b8fff8;
+      border-radius: 999px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 64mm 1fr;
+      gap: 7mm;
+      align-items: start;
+    }
+
+    aside,
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 5mm;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #d9e4ec;
+      border-radius: 14px;
+      padding: 5mm;
+      box-shadow: 0 8px 18px rgba(16, 42, 67, 0.08);
+    }
+
+    aside .card {
+      background: #f7fbfd;
+    }
+
+    h2 {
+      margin: 0 0 3.4mm;
+      color: #123047;
+      font-size: 13px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 1.1px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 2.5mm;
+    }
+
+    h2::before {
+      content: "";
+      width: 4mm;
+      height: 4mm;
+      border-radius: 50%;
+      background: #20a4a8;
+      flex: 0 0 auto;
+      box-shadow: 0 0 0 2mm rgba(32, 164, 168, 0.12);
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      margin: 0 0 2.6mm;
+      padding-left: 5mm;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.52em;
+      width: 2mm;
+      height: 2mm;
+      border-radius: 50%;
+      background: #20a4a8;
+    }
+
+    .personal li {
+      padding-left: 0;
+    }
+
+    .personal li::before {
+      display: none;
+    }
+
+    .label {
+      display: block;
+      color: #5b6b7b;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      font-weight: 800;
+      margin-bottom: 0.7mm;
+    }
+
+    .value {
+      display: block;
+      color: #102a43;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .item-title {
+      color: #102a43;
+      font-weight: 800;
+    }
+
+    .consent {
+      font-size: 9.3px;
+      line-height: 1.32;
+      color: #53606f;
+      border-left: 1mm solid #20a4a8;
+      padding-left: 3.2mm;
+      box-shadow: none;
+      background: #f8fbfd;
+    }
+
+    .consent h2 {
+      margin-bottom: 2.5mm;
+      font-size: 11px;
+    }
+
+    .consent p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="accent"></div>
+    <div class="content">
+      <header>
+        <h1>Mateusz Pluta</h1>
+        <div class="subtitle"></div>
+      </header>
+
+      <div class="layout">
+        <aside>
+          <section class="card">
+            <h2>Dane personalne</h2>
+            <ul class="personal">
+              <li>
+                <span class="label">Telefon</span>
+                <span class="value">783 156 382</span>
+              </li>
+              <li>
+                <span class="label">E-mail</span>
+                <span class="value">mateuszpluta29@gmail.com</span>
+              </li>
+              <li>
+                <span class="label">Data urodzenia</span>
+                <span class="value">28.06.2004r.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="card">
+            <h2>Umiejętności</h2>
+            <ul>
+              <li>Sprawna obsługa komputera w tym pakietu MS Office(Word, Excel, Access)</li>
+              <li>Angielski – komunikatywny</li>
+              <li>Diagnoza, naprawa i wymiana podstawowych części komputerowych</li>
+              <li>Podstawowa znajomość: PHP, CSS, HTML, JS i MSSQL</li>
+            </ul>
+          </section>
+
+          <section class="card">
+            <h2>Dodatkowe informacje</h2>
+            <ul>
+              <li>Prawo jazdy kat. B</li>
+              <li>Status studenta</li>
+              <li>Książeczka sanepidowska</li>
+            </ul>
+          </section>
+        </aside>
+
+        <main>
+          <section class="card">
+            <h2>Wykształcenie</h2>
+            <ul>
+              <li>
+                <span class="item-title">Technikum Ekonomiczno-Handlowe w Lublinie – Technik informatyk(INF 02 i INF 03),</span>
+                09.2019 – 04.2024
+              </li>
+              <li>
+                <span class="item-title">Politechnika Lubelska, Sztuczna inteligencja w biznesie</span>
+                2024 - obecnie
+              </li>
+            </ul>
+          </section>
+
+          <section class="card">
+            <h2>Doświadczenie zawodowe</h2>
+            <ul>
+              <li>Staż w zawodzie technik informatyk - X-COM Jarosław Krawczyk - 06.2022-07.2022</li>
+              <li>Pomocnik biurowy w gminie – staż – 05.2023</li>
+              <li>Operator produkcji - praca sezonowa - Nestle Waters Nałęczowianka 07.2024-08.2024</li>
+              <li>Realizacja i pakowanie zamówień oraz przyjmowanie i wydawanie towarów - praca sezonowa – VMV Studio 08.2025 – 09.2025</li>
+              <li>Prace magazynowe – DHL Parcel Lublin 05.2025 – obecnie</li>
+            </ul>
+          </section>
+
+          <section class="card consent">
+            <h2>Klauzula RODO</h2>
+            <p>Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r.</p>
+          </section>
+        </main>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
