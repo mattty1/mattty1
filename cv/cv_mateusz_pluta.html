@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>CV - Mateusz Pluta</title>
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  :root {
+    --primary: #1f4e6b;
+    --primary-dark: #163a50;
+    --accent: #2f97c1;
+    --sidebar-bg: #22526e;
+    --sidebar-text: #e8f2f8;
+    --text: #2d3440;
+    --muted: #5b6674;
+    --line: #e2e8ee;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--text);
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 1fr auto;
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  /* ===== Sidebar ===== */
+  .sidebar {
+    background: linear-gradient(160deg, var(--sidebar-bg) 0%, var(--primary-dark) 100%);
+    color: var(--sidebar-text);
+    padding: 22px 20px 26px;
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 3px solid rgba(255, 255, 255, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+  }
+
+  .sidebar h2 {
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    margin: 22px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--accent);
+    color: #ffffff;
+  }
+
+  .sidebar h2:first-of-type {
+    margin-top: 6px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 11.5px;
+    line-height: 1.5;
+    margin-bottom: 9px;
+    word-break: break-word;
+  }
+
+  .contact-item .ico {
+    flex: 0 0 auto;
+    width: 15px;
+    text-align: center;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .contact-item .label {
+    display: block;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #a9c9db;
+  }
+
+  .sidebar ul {
+    list-style: none;
+  }
+
+  .sidebar ul li {
+    position: relative;
+    padding-left: 15px;
+    font-size: 11.5px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .sidebar ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ===== Main ===== */
+  .main {
+    padding: 26px 28px 22px;
+  }
+
+  .name-block {
+    margin-bottom: 20px;
+  }
+
+  .name-block h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+    line-height: 1.05;
+  }
+
+  .name-block .role {
+    margin-top: 5px;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .section {
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .section-title::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: var(--line);
+  }
+
+  .section-title .dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .entry {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
+
+  .entry::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--accent);
+  }
+
+  .entry::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 16px;
+    bottom: -8px;
+    width: 2px;
+    background: var(--line);
+  }
+
+  .entry:last-child::after {
+    display: none;
+  }
+
+  .entry .title {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  .entry .meta {
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  .rodo {
+    grid-column: 1 / -1;
+    background: #f4f7f9;
+    border-top: 3px solid var(--accent);
+    padding: 12px 28px;
+    font-size: 8.5px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .rodo strong {
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 9px;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="avatar">MP</div>
+
+      <h2>Dane personalne</h2>
+      <div class="contact-item">
+        <span class="ico">&#9742;</span>
+        <span><span class="label">Telefon</span>783 156 382</span>
+      </div>
+      <div class="contact-item">
+        <span class="ico">&#9993;</span>
+        <span><span class="label">E-mail</span>mateuszpluta29@gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <span class="ico">&#127874;</span>
+        <span><span class="label">Data urodzenia</span>28.06.2004r.</span>
+      </div>
+
+      <h2>Umiejętności</h2>
+      <ul>
+        <li>Sprawna obsługa komputera w tym pakietu MS Office(Word, Excel, Access)</li>
+        <li>Angielski – komunikatywny</li>
+        <li>Diagnoza, naprawa i wymiana podstawowych części komputerowych</li>
+        <li>Podstawowa znajomość: PHP, CSS, HTML, JS i MSSQL</li>
+      </ul>
+
+      <h2>Dodatkowe informacje</h2>
+      <ul>
+        <li>Prawo jazdy kat. B</li>
+        <li>Status studenta</li>
+        <li>Książeczka sanepidowska</li>
+      </ul>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <div class="name-block">
+        <h1>Mateusz Pluta</h1>
+        <div class="role">Technik informatyk</div>
+      </div>
+
+      <section class="section">
+        <div class="section-title"><span class="dot">&#127891;</span>Wykształcenie</div>
+        <div class="entry">
+          <div class="title">Technikum Ekonomiczno-Handlowe w Lublinie – Technik informatyk(INF 02 i INF 03)</div>
+          <div class="meta">09.2019 – 04.2024</div>
+        </div>
+        <div class="entry">
+          <div class="title">Politechnika Lubelska, Sztuczna inteligencja w biznesie</div>
+          <div class="meta">2024 - obecnie</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title"><span class="dot">&#128188;</span>Doświadczenie zawodowe</div>
+        <div class="entry">
+          <div class="title">Staż w zawodzie technik informatyk - X-COM Jarosław Krawczyk</div>
+          <div class="meta">06.2022 - 07.2022</div>
+        </div>
+        <div class="entry">
+          <div class="title">Pomocnik biurowy w gminie – staż</div>
+          <div class="meta">05.2023</div>
+        </div>
+        <div class="entry">
+          <div class="title">Operator produkcji - praca sezonowa - Nestle Waters Nałęczowianka</div>
+          <div class="meta">07.2024 - 08.2024</div>
+        </div>
+        <div class="entry">
+          <div class="title">Realizacja i pakowanie zamówień oraz przyjmowanie i wydawanie towarów - praca sezonowa – VMV Studio</div>
+          <div class="meta">08.2025 – 09.2025</div>
+        </div>
+        <div class="entry">
+          <div class="title">Prace magazynowe – DHL Parcel Lublin</div>
+          <div class="meta">05.2025 – obecnie</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- RODO -->
+    <footer class="rodo">
+      <strong>Klauzula RODO:</strong>
+      Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji
+      (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z
+      Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r.
+    </footer>
+  </div>
+</body>
+</html>
