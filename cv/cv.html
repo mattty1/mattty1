@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<title>CV — Mateusz Pluta</title>
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Liberation Sans', 'DejaVu Sans', sans-serif;
+    color: #2b2f38;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    display: grid;
+    grid-template-columns: 78mm 1fr;
+    background: #ffffff;
+  }
+
+  /* ---------- SIDEBAR ---------- */
+  .sidebar {
+    background: linear-gradient(160deg, #1f3a5f 0%, #2d5a87 55%, #3a6ea5 100%);
+    color: #eef2f7;
+    padding: 28mm 10mm 20mm 12mm;
+    position: relative;
+  }
+
+  .sidebar::after {
+    content: "";
+    position: absolute;
+    right: -6mm;
+    top: 40mm;
+    bottom: 40mm;
+    width: 12mm;
+    background: transparent;
+  }
+
+  .avatar {
+    width: 42mm;
+    height: 42mm;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f2b544 0%, #e88b3c 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34pt;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 auto 10mm auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    border: 3px solid rgba(255,255,255,0.35);
+  }
+
+  .side-section {
+    margin-bottom: 9mm;
+  }
+
+  .side-section h2 {
+    font-size: 11pt;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin: 0 0 4mm 0;
+    color: #ffffff;
+    padding-bottom: 2mm;
+    border-bottom: 1.5px solid rgba(242,181,68,0.85);
+    display: inline-block;
+    padding-right: 12mm;
+  }
+
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.55;
+  }
+
+  .contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 3mm;
+    margin-bottom: 2.8mm;
+    word-break: break-word;
+  }
+
+  .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 6mm;
+    height: 6mm;
+    min-width: 6mm;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.14);
+    color: #f2b544;
+    font-size: 10pt;
+    flex-shrink: 0;
+    margin-top: 0.3mm;
+  }
+
+  .contact-list .label {
+    display: block;
+    font-size: 7.8pt;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 0.3mm;
+  }
+
+  .contact-list .value {
+    display: block;
+    color: #ffffff;
+    font-weight: 500;
+  }
+
+  .skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.55;
+  }
+
+  .skill-list li {
+    position: relative;
+    padding-left: 5mm;
+    margin-bottom: 2.6mm;
+    color: #f0f4fa;
+  }
+
+  .skill-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2mm;
+    width: 2.4mm;
+    height: 2.4mm;
+    background: #f2b544;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(242,181,68,0.25);
+  }
+
+  .extras li strong {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  /* ---------- MAIN ---------- */
+  .main {
+    padding: 22mm 15mm 15mm 15mm;
+    background: #ffffff;
+  }
+
+  .name-block {
+    margin-bottom: 10mm;
+  }
+
+  .name-block h1 {
+    font-size: 30pt;
+    font-weight: 700;
+    margin: 0;
+    color: #1f3a5f;
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+
+  .name-block .surname {
+    color: #e88b3c;
+  }
+
+  .name-block .role {
+    margin-top: 3mm;
+    font-size: 11pt;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #6b7280;
+  }
+
+  .name-block .accent-bar {
+    margin-top: 5mm;
+    width: 22mm;
+    height: 1.2mm;
+    background: #f2b544;
+    border-radius: 1mm;
+  }
+
+  .section {
+    margin-bottom: 8mm;
+  }
+
+  .section h2 {
+    font-size: 12.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #1f3a5f;
+    margin: 0 0 4mm 0;
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+  }
+
+  .section h2::before {
+    content: "";
+    display: inline-block;
+    width: 5mm;
+    height: 5mm;
+    background: #1f3a5f;
+    border-radius: 1.4mm;
+    position: relative;
+  }
+
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 2mm;
+    top: 2mm;
+    bottom: 2mm;
+    width: 0.5mm;
+    background: linear-gradient(to bottom, #f2b544, rgba(242,181,68,0.15));
+  }
+
+  .timeline li {
+    position: relative;
+    padding-left: 9mm;
+    margin-bottom: 4.5mm;
+  }
+
+  .timeline li::before {
+    content: "";
+    position: absolute;
+    left: 0.9mm;
+    top: 2mm;
+    width: 2.6mm;
+    height: 2.6mm;
+    background: #f2b544;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #f2b544;
+  }
+
+  .item-title {
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: #1f3a5f;
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  .item-meta {
+    display: inline-block;
+    margin-top: 1mm;
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    color: #e88b3c;
+    background: rgba(242,181,68,0.14);
+    padding: 0.6mm 2mm;
+    border-radius: 1mm;
+  }
+
+  .item-desc {
+    margin: 1.2mm 0 0 0;
+    font-size: 9.5pt;
+    color: #4b5563;
+    line-height: 1.45;
+  }
+
+  .rodo {
+    margin-top: 10mm;
+    padding: 4mm 5mm;
+    background: #f6f8fb;
+    border-left: 1mm solid #3a6ea5;
+    border-radius: 1.5mm;
+    font-size: 7.4pt;
+    color: #5b6473;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  .rodo strong {
+    color: #1f3a5f;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 8pt;
+    display: block;
+    margin-bottom: 1.5mm;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="avatar">MP</div>
+
+      <div class="side-section">
+        <h2>Kontakt</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="icon">✆</span>
+            <span>
+              <span class="label">Telefon</span>
+              <span class="value">783 156 382</span>
+            </span>
+          </li>
+          <li>
+            <span class="icon">✉</span>
+            <span>
+              <span class="label">E-mail</span>
+              <span class="value">mateuszpluta29@gmail.com</span>
+            </span>
+          </li>
+          <li>
+            <span class="icon">★</span>
+            <span>
+              <span class="label">Data urodzenia</span>
+              <span class="value">28.06.2004 r.</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="side-section">
+        <h2>Umiejętności</h2>
+        <ul class="skill-list">
+          <li>Sprawna obsługa komputera w tym pakietu MS Office (Word, Excel, Access)</li>
+          <li>Angielski – komunikatywny</li>
+          <li>Diagnoza, naprawa i wymiana podstawowych części komputerowych</li>
+          <li>Podstawowa znajomość: PHP, CSS, HTML, JS i MSSQL</li>
+        </ul>
+      </div>
+
+      <div class="side-section extras">
+        <h2>Dodatkowe informacje</h2>
+        <ul class="skill-list">
+          <li>Prawo jazdy kat. B</li>
+          <li>Status studenta</li>
+          <li>Książeczka sanepidowska</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="name-block">
+        <h1>Mateusz <span class="surname">Pluta</span></h1>
+        <div class="role">Technik informatyk</div>
+        <div class="accent-bar"></div>
+      </div>
+
+      <section class="section">
+        <h2>Wykształcenie</h2>
+        <ul class="timeline">
+          <li>
+            <p class="item-title">Technikum Ekonomiczno-Handlowe w Lublinie – Technik informatyk (INF 02 i INF 03)</p>
+            <span class="item-meta">09.2019 – 04.2024</span>
+          </li>
+          <li>
+            <p class="item-title">Politechnika Lubelska – Sztuczna inteligencja w biznesie</p>
+            <span class="item-meta">2024 – obecnie</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Doświadczenie zawodowe</h2>
+        <ul class="timeline">
+          <li>
+            <p class="item-title">Staż w zawodzie technik informatyk — X-COM Jarosław Krawczyk</p>
+            <span class="item-meta">06.2022 – 07.2022</span>
+          </li>
+          <li>
+            <p class="item-title">Pomocnik biurowy w gminie – staż</p>
+            <span class="item-meta">05.2023</span>
+          </li>
+          <li>
+            <p class="item-title">Operator produkcji — Nestle Waters Nałęczowianka</p>
+            <p class="item-desc">Praca sezonowa</p>
+            <span class="item-meta">07.2024 – 08.2024</span>
+          </li>
+          <li>
+            <p class="item-title">Realizacja i pakowanie zamówień oraz przyjmowanie i wydawanie towarów — VMV Studio</p>
+            <p class="item-desc">Praca sezonowa</p>
+            <span class="item-meta">08.2025 – 09.2025</span>
+          </li>
+          <li>
+            <p class="item-title">Prace magazynowe — DHL Parcel Lublin</p>
+            <span class="item-meta">05.2025 – obecnie</span>
+          </li>
+        </ul>
+      </section>
+
+      <div class="rodo">
+        <strong>Klauzula RODO</strong>
+        Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r.
+      </div>
+    </main>
+  </div>
+</body>
+</html>
