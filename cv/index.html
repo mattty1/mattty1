@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Mateusz Pluta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a5f;
+      --primary-dark: #152a45;
+      --accent: #3b82f6;
+      --accent-light: #60a5fa;
+      --accent-soft: #dbeafe;
+      --sidebar-bg: linear-gradient(165deg, #1e3a5f 0%, #2563eb 55%, #3b82f6 100%);
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --page-bg: #f8fafc;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.55;
+      color: var(--text);
+      background: #e2e8f0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 72mm 1fr;
+      box-shadow: 0 20px 60px rgba(30, 58, 95, 0.15);
+      overflow: hidden;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: var(--sidebar-bg);
+      color: var(--white);
+      padding: 28px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .name-block {
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .name-block h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22pt;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .name-block .subtitle {
+      font-size: 8.5pt;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .sidebar-section h2 {
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sidebar-section h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 9.5pt;
+      line-height: 1.45;
+    }
+
+    .contact-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 12px;
+    }
+
+    .extra-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .extra-list li {
+      font-size: 9.5pt;
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.45;
+    }
+
+    .extra-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent-light);
+    }
+
+    /* Main content */
+    .main {
+      padding: 28px 30px 24px 28px;
+      background: var(--white);
+    }
+
+    .section {
+      margin-bottom: 22px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      padding-bottom: 7px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      min-width: 100%;
+    }
+
+    .timeline {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 3.5px;
+      top: 18px;
+      bottom: -14px;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .timeline-item:last-child::after {
+      display: none;
+    }
+
+    .timeline-content {
+      font-size: 10pt;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .skills-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .skills-list li {
+      font-size: 10pt;
+      padding: 8px 12px;
+      background: linear-gradient(90deg, var(--accent-soft) 0%, transparent 100%);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      line-height: 1.45;
+    }
+
+    .rodo {
+      margin-top: 18px;
+      padding: 12px 14px;
+      background: var(--page-bg);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .rodo h2 {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .rodo p {
+      font-size: 7.5pt;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .page {
+        box-shadow: none;
+        width: 100%;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="name-block">
+        <h1>Mateusz Pluta</h1>
+        <div class="subtitle">Curriculum Vitae</div>
+      </div>
+
+      <div class="sidebar-section">
+        <h2>Dane personalne</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-icon">📞</span>
+            <span>Telefon: 783 156 382</span>
+          </li>
+          <li>
+            <span class="contact-icon">✉️</span>
+            <span>E-mail: mateuszpluta29@gmail.com</span>
+          </li>
+          <li>
+            <span class="contact-icon">🎂</span>
+            <span>Data urodzenia: 28.06.2004r.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h2>Dodatkowe informacje</h2>
+        <ul class="extra-list">
+          <li>Prawo jazdy kat. B</li>
+          <li>Status studenta</li>
+          <li>Książeczka sanepidowska</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="section">
+        <h2 class="section-title">Wykształcenie</h2>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-content">Technikum Ekonomiczno-Handlowe w Lublinie – Technik informatyk(INF 02 i INF 03), 09.2019 – 04.2024</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-content">Politechnika Lubelska, Sztuczna inteligencja w biznesie 2024 - obecnie</div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Doświadczenie zawodowe</h2>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-content">Staż w zawodzie technik informatyk - X-COM Jarosław Krawczyk - 06.2022-07.2022</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-content">Pomocnik biurowy w gminie – staż – 05.2023</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-content">Operator produkcji - praca sezonowa - Nestle Waters Nałęczowianka 07.2024-08.2024</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-content">Realizacja i pakowanie zamówień oraz przyjmowanie i wydawanie towarów - praca sezonowa – VMV Studio 08.2025 – 09.2025</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-content">Prace magazynowe – DHL Parcel Lublin 05.2025 – obecnie</div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Umiejętności</h2>
+        <ul class="skills-list">
+          <li>Sprawna obsługa komputera w tym pakietu MS Office(Word, Excel, Access)</li>
+          <li>Angielski – komunikatywny</li>
+          <li>Diagnoza, naprawa i wymiana podstawowych części komputerowych</li>
+          <li>Podstawowa znajomość: PHP, CSS, HTML, JS i MSSQL</li>
+        </ul>
+      </section>
+
+      <div class="rodo">
+        <h2>Klauzula RODO</h2>
+        <p>Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r.</p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
