@@ -13,279 +13,262 @@
       box-sizing: border-box;
     }
 
+    html,
     body {
       margin: 0;
-      background: #eef3f8;
-      color: #1d2939;
+      width: 210mm;
+      min-height: 297mm;
+      background: #f3f6f8;
+      color: #203040;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 11.5px;
-      line-height: 1.42;
+      font-size: 11.2px;
+      line-height: 1.45;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
     .page {
       width: 210mm;
       min-height: 297mm;
-      margin: 0 auto;
-      background: #ffffff;
-      position: relative;
+      display: grid;
+      grid-template-columns: 64mm 1fr;
+      background: #f3f6f8;
       overflow: hidden;
     }
 
-    .accent {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 47mm;
-      background: linear-gradient(135deg, #102a43 0%, #175873 54%, #20a4a8 100%);
-    }
-
-    .accent::after {
-      content: "";
-      position: absolute;
-      right: -18mm;
-      top: -18mm;
-      width: 70mm;
-      height: 70mm;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.12);
-    }
-
-    .content {
-      position: relative;
-      padding: 15mm 14mm 12mm;
-      z-index: 1;
-    }
-
-    header {
+    .sidebar {
+      min-height: 297mm;
+      padding: 6mm 8mm 10mm;
+      background: #143b5b;
       color: #ffffff;
-      padding-bottom: 10mm;
+    }
+
+    .photo {
+      width: 34mm;
+      height: 42mm;
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+      margin: 0 0 5mm 0;
+      border: 0;
+      background: #ffffff;
     }
 
     h1 {
-      margin: 0;
-      font-size: 31px;
-      letter-spacing: 0.8px;
-      line-height: 1.1;
+      margin: 0 0 15mm;
+      color: #ffffff;
+      font-size: 25px;
+      line-height: 1.07;
+      letter-spacing: -0.4px;
       font-weight: 800;
     }
 
-    .subtitle {
-      margin-top: 3mm;
-      width: 18mm;
-      height: 2px;
-      background: #b8fff8;
-      border-radius: 999px;
+    .side-section {
+      margin-bottom: 10mm;
     }
 
-    .layout {
-      display: grid;
-      grid-template-columns: 64mm 1fr;
-      gap: 7mm;
-      align-items: start;
-    }
-
-    aside,
-    main {
-      display: flex;
-      flex-direction: column;
-      gap: 5mm;
-    }
-
-    .card {
-      background: #ffffff;
-      border: 1px solid #d9e4ec;
-      border-radius: 14px;
-      padding: 5mm;
-      box-shadow: 0 8px 18px rgba(16, 42, 67, 0.08);
-    }
-
-    aside .card {
-      background: #f7fbfd;
-    }
-
-    h2 {
-      margin: 0 0 3.4mm;
-      color: #123047;
-      font-size: 13px;
-      line-height: 1.2;
+    .side-title,
+    .section-title {
+      margin: 0 0 4mm;
+      color: #b9f7ff;
+      font-size: 9.4px;
+      line-height: 1.4;
       text-transform: uppercase;
-      letter-spacing: 1.1px;
+      letter-spacing: 1.8px;
       font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 2.5mm;
     }
 
-    h2::before {
-      content: "";
-      width: 4mm;
-      height: 4mm;
-      border-radius: 50%;
-      background: #20a4a8;
-      flex: 0 0 auto;
-      box-shadow: 0 0 0 2mm rgba(32, 164, 168, 0.12);
+    .side-item {
+      margin-bottom: 4.8mm;
     }
 
-    ul {
+    .label {
+      display: block;
+      margin-bottom: 0.8mm;
+      color: #ffffff;
+      font-size: 8.7px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-weight: 800;
+    }
+
+    .value,
+    .side-list li {
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 400;
+    }
+
+    .side-list,
+    .main-list {
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
-    li {
+    .side-list li {
+      margin-bottom: 4.4mm;
+    }
+
+    .main {
+      padding: 16mm 11mm 12mm;
+      background: #f3f6f8;
+    }
+
+    .main-section {
+      margin-bottom: 7.2mm;
+    }
+
+    .main-section.education {
+      background: transparent;
+      box-shadow: none;
+      filter: none;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 4mm;
+      margin-bottom: 4mm;
+      color: #183047;
+      font-size: 11.5px;
+      letter-spacing: 2px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 3.6mm;
+      height: 3.6mm;
+      border-radius: 50%;
+      background: #26c4d8;
+      flex: 0 0 auto;
+    }
+
+    .education-card {
+      margin: 0 0 4.8mm;
+      padding: 4.8mm 6mm 4.8mm 7mm;
+      background: #ffffff;
+      border-left: 1.7mm solid #26c4d8;
+      border-radius: 4mm;
+      box-shadow: none;
+      font-size: 10.7px;
+      font-weight: 700;
+      color: #263746;
+    }
+
+    .main-list li {
       position: relative;
-      margin: 0 0 2.6mm;
-      padding-left: 5mm;
+      margin-bottom: 2.3mm;
+      padding-left: 6mm;
+      color: #253545;
+      font-size: 10.5px;
+      font-weight: 600;
     }
 
-    li:last-child {
-      margin-bottom: 0;
-    }
-
-    li::before {
+    .main-list li::before {
       content: "";
       position: absolute;
-      left: 0;
-      top: 0.52em;
-      width: 2mm;
-      height: 2mm;
+      left: 1.2mm;
+      top: 0.68em;
+      width: 1.15mm;
+      height: 1.15mm;
       border-radius: 50%;
-      background: #20a4a8;
-    }
-
-    .personal li {
-      padding-left: 0;
-    }
-
-    .personal li::before {
-      display: none;
-    }
-
-    .label {
-      display: block;
-      color: #5b6b7b;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.7px;
-      font-weight: 800;
-      margin-bottom: 0.7mm;
-    }
-
-    .value {
-      display: block;
-      color: #102a43;
-      font-weight: 700;
-      word-break: break-word;
-    }
-
-    .item-title {
-      color: #102a43;
-      font-weight: 800;
+      background: #26c4d8;
     }
 
     .consent {
-      font-size: 9.3px;
-      line-height: 1.32;
-      color: #53606f;
-      border-left: 1mm solid #20a4a8;
-      padding-left: 3.2mm;
-      box-shadow: none;
-      background: #f8fbfd;
+      margin-top: 8mm;
+      padding: 5mm;
+      background: #dff7fb;
+      border-radius: 4mm;
     }
 
-    .consent h2 {
-      margin-bottom: 2.5mm;
-      font-size: 11px;
+    .consent .section-title {
+      margin-bottom: 3mm;
+      font-size: 10.3px;
+      letter-spacing: 1.5px;
+    }
+
+    .consent .section-title::before {
+      width: 3.2mm;
+      height: 3.2mm;
+      box-shadow: 0 0 0 1.7mm rgba(38, 196, 216, 0.13);
     }
 
     .consent p {
       margin: 0;
+      color: #667385;
+      font-size: 8.4px;
+      line-height: 1.35;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
-  <section class="page">
-    <div class="accent"></div>
-    <div class="content">
-      <header>
-        <h1>Mateusz Pluta</h1>
-        <div class="subtitle"></div>
-      </header>
+  <article class="page">
+    <aside class="sidebar">
+      <img class="photo" src="mateusz_pluta_photo.jpg" alt="Mateusz Pluta">
+      <h1>Mateusz<br>Pluta</h1>
 
-      <div class="layout">
-        <aside>
-          <section class="card">
-            <h2>Dane personalne</h2>
-            <ul class="personal">
-              <li>
-                <span class="label">Telefon</span>
-                <span class="value">783 156 382</span>
-              </li>
-              <li>
-                <span class="label">E-mail</span>
-                <span class="value">mateuszpluta29@gmail.com</span>
-              </li>
-              <li>
-                <span class="label">Data urodzenia</span>
-                <span class="value">28.06.2004r.</span>
-              </li>
-            </ul>
-          </section>
+      <section class="side-section">
+        <h2 class="side-title">Dane personalne:</h2>
+        <div class="side-item">
+          <span class="label">Telefon</span>
+          <span class="value">783 156 382</span>
+        </div>
+        <div class="side-item">
+          <span class="label">E-mail</span>
+          <span class="value">mateuszpluta29@gmail.com</span>
+        </div>
+        <div class="side-item">
+          <span class="label">Data urodzenia</span>
+          <span class="value">28.06.2004r.</span>
+        </div>
+      </section>
 
-          <section class="card">
-            <h2>Umiejętności</h2>
-            <ul>
-              <li>Sprawna obsługa komputera w tym pakietu MS Office(Word, Excel, Access)</li>
-              <li>Angielski – komunikatywny</li>
-              <li>Diagnoza, naprawa i wymiana podstawowych części komputerowych</li>
-              <li>Podstawowa znajomość: PHP, CSS, HTML, JS i MSSQL</li>
-            </ul>
-          </section>
+      <section class="side-section">
+        <h2 class="side-title">Dodatkowe<br>informacje:</h2>
+        <ul class="side-list">
+          <li>Prawo jazdy kat. B</li>
+          <li>Status studenta</li>
+          <li>Książeczka sanepidowska</li>
+        </ul>
+      </section>
+    </aside>
 
-          <section class="card">
-            <h2>Dodatkowe informacje</h2>
-            <ul>
-              <li>Prawo jazdy kat. B</li>
-              <li>Status studenta</li>
-              <li>Książeczka sanepidowska</li>
-            </ul>
-          </section>
-        </aside>
+    <main class="main">
+      <section class="main-section education">
+        <h2 class="section-title">Wykształcenie:</h2>
+        <div class="education-card">Technikum Ekonomiczno-Handlowe w Lublinie – Technik informatyk(INF 02 i INF 03), 09.2019 – 04.2024</div>
+        <div class="education-card">Politechnika Lubelska, Sztuczna inteligencja w biznesie 2024 - obecnie</div>
+      </section>
 
-        <main>
-          <section class="card">
-            <h2>Wykształcenie</h2>
-            <ul>
-              <li>
-                <span class="item-title">Technikum Ekonomiczno-Handlowe w Lublinie – Technik informatyk(INF 02 i INF 03),</span>
-                09.2019 – 04.2024
-              </li>
-              <li>
-                <span class="item-title">Politechnika Lubelska, Sztuczna inteligencja w biznesie</span>
-                2024 - obecnie
-              </li>
-            </ul>
-          </section>
+      <section class="main-section">
+        <h2 class="section-title">Doświadczenie zawodowe:</h2>
+        <ul class="main-list">
+          <li>Staż w zawodzie technik informatyk - X-COM Jarosław Krawczyk - 06.2022-07.2022</li>
+          <li>Pomocnik biurowy w gminie – staż – 05.2023</li>
+          <li>Operator produkcji - praca sezonowa - Nestle Waters Nałęczowianka 07.2024-08.2024</li>
+          <li>Realizacja i pakowanie zamówień oraz przyjmowanie i wydawanie towarów - praca sezonowa – VMV Studio 08.2025 – 09.2025</li>
+          <li>Prace magazynowe – DHL Parcel Lublin 05.2025 – obecnie</li>
+        </ul>
+      </section>
 
-          <section class="card">
-            <h2>Doświadczenie zawodowe</h2>
-            <ul>
-              <li>Staż w zawodzie technik informatyk - X-COM Jarosław Krawczyk - 06.2022-07.2022</li>
-              <li>Pomocnik biurowy w gminie – staż – 05.2023</li>
-              <li>Operator produkcji - praca sezonowa - Nestle Waters Nałęczowianka 07.2024-08.2024</li>
-              <li>Realizacja i pakowanie zamówień oraz przyjmowanie i wydawanie towarów - praca sezonowa – VMV Studio 08.2025 – 09.2025</li>
-              <li>Prace magazynowe – DHL Parcel Lublin 05.2025 – obecnie</li>
-            </ul>
-          </section>
+      <section class="main-section">
+        <h2 class="section-title">Umiejętności:</h2>
+        <ul class="main-list">
+          <li>Sprawna obsługa komputera w tym pakietu MS Office(Word, Excel, Access)</li>
+          <li>Angielski – komunikatywny</li>
+          <li>Diagnoza, naprawa i wymiana podstawowych części komputerowych</li>
+          <li>Podstawowa znajomość: PHP, CSS, HTML, JS i MSSQL</li>
+        </ul>
+      </section>
 
-          <section class="card consent">
-            <h2>Klauzula RODO</h2>
-            <p>Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r.</p>
-          </section>
-        </main>
-      </div>
-    </div>
-  </section>
+      <section class="consent">
+        <h2 class="section-title">Klauzula RODO:</h2>
+        <p>Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r.</p>
+      </section>
+    </main>
+  </article>
 </body>
 </html>
