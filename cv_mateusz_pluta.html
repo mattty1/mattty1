@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV – Mateusz Pluta</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --accent:    #1a56a0;
+      --accent-lt: #e8f0fb;
+      --dark:      #1e2633;
+      --mid:       #4a5568;
+      --light:     #f4f7fb;
+      --border:    #dce6f5;
+      --white:     #ffffff;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .page {
+      background: var(--white);
+      width: 860px;
+      box-shadow: 0 8px 40px rgba(26, 86, 160, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #1a3a6b 0%, #1a56a0 60%, #2f80d6 100%);
+      padding: 44px 52px 36px;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: 80px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .avatar {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      border: 3px solid rgba(255,255,255,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      color: #fff;
+      flex-shrink: 0;
+      z-index: 1;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+    .header-text { z-index: 1; }
+
+    .header-text h1 {
+      color: #fff;
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .header-text .tagline {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      font-weight: 400;
+      margin-top: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .contacts {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+    }
+
+    .contacts a, .contacts span {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-weight: 500;
+    }
+
+    .contacts a:hover { color: #fff; text-decoration: underline; }
+
+    .contacts svg {
+      width: 14px; height: 14px;
+      opacity: 0.8;
+      flex-shrink: 0;
+    }
+
+    /* ── BODY ── */
+    .body {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      flex: 1;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      background: var(--accent-lt);
+      padding: 36px 24px;
+      border-right: 1px solid var(--border);
+    }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 36px 44px;
+    }
+
+    /* ── SECTION SHARED ── */
+    .section { margin-bottom: 32px; }
+    .section:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+      opacity: 0.25;
+    }
+
+    /* ── SIDEBAR SKILLS ── */
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .skill-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    .skill-item span {
+      font-size: 0.84rem;
+      color: var(--mid);
+      line-height: 1.4;
+    }
+
+    /* ── SIDEBAR INFO ITEMS ── */
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .info-item svg {
+      width: 15px; height: 15px;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .info-item span {
+      font-size: 0.84rem;
+      color: var(--mid);
+      line-height: 1.4;
+    }
+
+    /* ── EXPERIENCE CARDS ── */
+    .exp-item {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 22px;
+    }
+
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 7px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--accent-lt);
+      outline: 2px solid var(--accent);
+    }
+
+    .exp-item::after {
+      content: '';
+      position: absolute;
+      left: 4px; top: 18px;
+      width: 1px;
+      height: calc(100% + 10px);
+      background: var(--border);
+    }
+
+    .exp-item:last-child::after { display: none; }
+
+    .exp-role {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    .exp-company {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .exp-date {
+      font-size: 0.76rem;
+      color: var(--mid);
+      margin-top: 2px;
+      font-weight: 400;
+    }
+
+    /* ── EDUCATION CARDS ── */
+    .edu-item {
+      background: var(--light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+
+    .edu-school {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    .edu-degree {
+      font-size: 0.82rem;
+      color: var(--mid);
+      margin-top: 3px;
+    }
+
+    .edu-date {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 0.75rem;
+      color: var(--accent);
+      background: var(--accent-lt);
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    /* ── RODO ── */
+    .rodo {
+      font-size: 0.72rem;
+      color: #9aa5b4;
+      line-height: 1.6;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      margin-top: 4px;
+    }
+
+    @media print {
+      body { padding: 0; background: #fff; }
+      .page { box-shadow: none; border-radius: 0; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="avatar">MP</div>
+    <div class="header-text">
+      <h1>Mateusz Pluta</h1>
+      <p class="tagline">Technik Informatyk &nbsp;·&nbsp; Student AI w Biznesie</p>
+      <div class="contacts">
+        <a href="tel:783156382">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.09 5.18 2 2 0 015.1 3h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          783 156 382
+        </a>
+        <a href="mailto:mateuszpluta29@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          mateuszpluta29@gmail.com
+        </a>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          28.06.2004
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="section">
+        <div class="section-title">Umiejętności</div>
+
+        <div class="skill-item">
+          <div class="skill-dot"></div>
+          <span>Obsługa komputera i pakietu MS&nbsp;Office (Word, Excel, Access)</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-dot"></div>
+          <span>Angielski – komunikatywny</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-dot"></div>
+          <span>Diagnoza, naprawa i wymiana podstawowych części komputerowych</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-dot"></div>
+          <span>Podstawy: PHP, CSS, HTML, JS, MSSQL</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Dodatkowe info</div>
+
+        <div class="info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <span>Prawo jazdy kat.&nbsp;B</span>
+        </div>
+        <div class="info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <span>Status studenta</span>
+        </div>
+        <div class="info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Książeczka sanepidowska</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <div class="section-title">Wykształcenie</div>
+
+        <div class="edu-item">
+          <div class="edu-school">Politechnika Lubelska</div>
+          <div class="edu-degree">Sztuczna inteligencja w biznesie</div>
+          <span class="edu-date">2024 – obecnie</span>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-school">Technikum Ekonomiczno-Handlowe w Lublinie</div>
+          <div class="edu-degree">Technik informatyk (INF 02 i INF 03)</div>
+          <span class="edu-date">09.2019 – 04.2024</span>
+        </div>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="section">
+        <div class="section-title">Doświadczenie zawodowe</div>
+
+        <div class="exp-item">
+          <div class="exp-role">Prace magazynowe</div>
+          <div class="exp-company">DHL Parcel Lublin</div>
+          <div class="exp-date">05.2025 – obecnie</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-role">Realizacja i pakowanie zamówień &amp; przyjmowanie i wydawanie towarów</div>
+          <div class="exp-company">VMV Studio &nbsp;·&nbsp; praca sezonowa</div>
+          <div class="exp-date">08.2025 – 09.2025</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-role">Operator produkcji</div>
+          <div class="exp-company">Nestle Waters Nałęczowianka &nbsp;·&nbsp; praca sezonowa</div>
+          <div class="exp-date">07.2024 – 08.2024</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-role">Pomocnik biurowy</div>
+          <div class="exp-company">Gmina &nbsp;·&nbsp; staż</div>
+          <div class="exp-date">05.2023</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-role">Staż – technik informatyk</div>
+          <div class="exp-company">X-COM Jarosław Krawczyk &nbsp;·&nbsp; staż</div>
+          <div class="exp-date">06.2022 – 07.2022</div>
+        </div>
+      </div>
+
+      <!-- RODO -->
+      <p class="rodo">
+        Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji
+        (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000)
+        oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r.)
+      </p>
+
+    </main>
+  </div>
+</div>
+</body>
+</html>
